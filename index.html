@@ -269,11 +269,11 @@ const track=(name,params={})=>{
     let sent=false;
     if(navigator.sendBeacon){
       try{
-        sent=navigator.sendBeacon("/",new Blob([body],{type:"application/x-www-form-urlencoded;charset=UTF-8"}));
+        sent=navigator.sendBeacon("https://shigoto-kuro-memo.netlify.app/",new Blob([body],{type:"application/x-www-form-urlencoded;charset=UTF-8"}));
       }catch(e){}
     }
     if(!sent){
-      fetch("/",{
+      fetch("https://shigoto-kuro-memo.netlify.app/",{
         method:"POST",
         headers:{"Content-Type":"application/x-www-form-urlencoded"},
         body,
